@@ -34,6 +34,15 @@ for link in links:
         # Download the video and save it to the 'videos' folder with the random filename
         video_stream.download(output_path='videos', filename=new_filename)
 
+        # Remove the link from the file
+        with open('./assets/links.txt', 'r+') as file:
+            lines = file.readlines()
+            file.seek(0)
+            for line in lines:
+                if line.strip() != link.strip():
+                    file.write(line)
+            file.truncate()
+
         print(f"Downloaded and renamed video to: {new_filename}")
     except Exception as e:
         print(f"Error downloading {link.strip()}: {str(e)}")
