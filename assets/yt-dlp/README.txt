@@ -1,3 +1,3 @@
-download the ffmped bins and put them here
+download the ffmpeg bins and put them here
 
 yt-dlp will be auto downloaded
