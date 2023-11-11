@@ -7,7 +7,7 @@ import shutil
 import random
 from moviepy.editor import VideoFileClip, concatenate_videoclips
 
-# Download yt-dlp
+# Download yt-dlp and use it
 if sys.platform.startswith('win32'):
     if not os.path.exists("./assets/yt-dlp/yt-dlp.exe"):
         urllib.request.urlretrieve('https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp.exe', './assets/yt-dlp/yt-dlp.exe')
@@ -18,12 +18,12 @@ elif sys.platform.startswith('linux'):
     if not os.path.exists("./assets/yt-dlp/yt-dlp"):
         urllib.request.urlretrieve('https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp_linux', './assets/yt-dlp/yt-dlp')
 
-# Function to generate a random 5-letter text
+# Function to generate a random 5-letter text and return it
 def generate_random_name():
     letters = string.ascii_lowercase
     return ''.join(random.choice(letters) for _ in range(5))
 
-# Create a 'videos' folder if it doesn't exist
+# Create a 'videos' folder if it doesn't exist and use it
 if not os.path.exists('videos'):
     os.makedirs('videos')
 
